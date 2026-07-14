@@ -3,12 +3,12 @@ import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
+import Typography from "@mui/material/Typography";
 import { NavLink } from "react-router-dom";
 
 const pages = [
@@ -28,42 +28,57 @@ export default function Navbar() {
     setAnchorElNav(null);
   };
 
+  // ================= ACTIVE LINK STYLE =================
+  const activeLinkStyle = {
+    position: "relative",
+
+    "&::after": {
+      content: '""',
+      position: "absolute",
+      left: "50%",
+      bottom: -6,
+      width: 0,
+      height: "2px",
+      backgroundColor: "#FFECDE",
+      transform: "translateX(-50%)",
+      transition: "width 0.35s ease",
+    },
+
+    "&.active::after": {
+      width: "100%",
+    },
+
+    "&.active": {
+      color: "#FFECDE",
+    },
+  };
+
   return (
     <AppBar
       position="fixed"
-      sx={{ backgroundColor: "#1C0D24", boxShadow: "none" }}
+      sx={{
+        backgroundColor: "#1C0D24",
+        boxShadow: "none",
+      }}
     >
       <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          {/* ================= DESKTOP LOGO ================= */}
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="#"
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: '"Press Start 2P", monospace',
-              fontWeight: 400,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            NEXCORE
-          </Typography>
-
-          {/* ================= MOBILE MENU ================= */}
+        <Toolbar
+          disableGutters
+          sx={{
+            position: "relative",
+            justifyContent: "center",
+          }}
+        >
+           {/* ================= MOBILE MENU ================= */}
           <Box
             sx={{
-              flexGrow: 1,
               display: { xs: "flex", md: "none" },
+              flexGrow: 1,
             }}
           >
             <IconButton
-              size="large"
               color="inherit"
+              size="large"
               onClick={handleOpenNavMenu}
             >
               <MenuIcon />
@@ -73,55 +88,53 @@ export default function Navbar() {
               anchorEl={anchorElNav}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
             >
+              {/* MOBILE LINKS */}
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography
-                    sx={{
-                      fontFamily: '"Press Start 2P", monospace',
-                      fontWeight: 400,
-                      fontSize: "0.65rem",
-                      textAlign: "center",
-                    }}
-                  >
-                    {page}
-                  </Typography>
+                <MenuItem
+                  key={page.path}
+                  component={NavLink}
+                  to={page.path}
+                  onClick={handleCloseNavMenu}
+                  sx={{
+                    fontFamily: '"Press Start 2P", monospace',
+                    fontSize: "0.65rem",
+                    color: "#1C0D24",
+                    textDecoration: "none",
+                    "&.active": {
+                      color: "#fbd5ba",
+                    },
+                  }}
+                >
+                  {page.name}
                 </MenuItem>
               ))}
             </Menu>
           </Box>
+          {/* ================= LOGO ================= */}
 
-          {/* ================= MOBILE LOGO ================= */}
           <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="#"
+            component={NavLink}
+            to="/"
             sx={{
+              ml: 4,
               mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
+              color: "#FFECDE",
+              textDecoration: "none",
               fontFamily: '"Press Start 2P", monospace',
               fontWeight: 400,
-              letterSpacing: ".2rem",
-              color: "inherit",
-              textDecoration: "none",
+              letterSpacing: ".3rem",
               fontSize: {
                 xs: "0.65rem",
                 sm: "0.9rem",
+                md: "1rem",
               },
             }}
           >
             NEXCORE
           </Typography>
+
+         
 
           {/* ================= DESKTOP NAV LINKS ================= */}
           <Box
@@ -136,37 +149,22 @@ export default function Navbar() {
                 key={page.path}
                 component={NavLink}
                 to={page.path}
-                onClick={handleCloseNavMenu}
                 sx={{
                   my: 2,
                   px: 2.5,
+
                   color: "white",
                   textTransform: "none",
+                  textDecoration: "none",
+
                   fontFamily: '"Press Start 2P", monospace',
                   fontWeight: 400,
                   fontSize: "0.6rem",
+
                   borderRadius: 0,
-                  position: "relative",
 
-                  "&::after": {
-                    content: '""',
-                    position: "absolute",
-                    left: "50%",
-                    bottom: 5,
-                    width: 0,
-                    height: "2px",
-                    backgroundColor: "#FFECDE",
-                    transform: "translateX(-50%)",
-                    transition: "width 0.35s ease",
-                  },
-
-                  "&.active::after": {
-                    width: "70%",
-                  },
-
-                  "&.active": {
-                    color: "#FFECDE",
-                  },
+                  // underline animation
+                  ...activeLinkStyle,
                 }}
               >
                 {page.name}
@@ -174,18 +172,19 @@ export default function Navbar() {
             ))}
           </Box>
 
-          {/* ================= DESKTOP CTA BUTTON ================= */}
+          {/* ================= BUILD NOW BUTTON ================= */}
           <Box
             sx={{
               display: { xs: "none", md: "flex" },
-              paddingRight: "3rem",
+              pr: "3rem",
             }}
           >
             <Button
               variant="contained"
               sx={{
                 border: "4px solid #F8CAA5",
-                py: "5px",
+                py: "3px",
+
                 backgroundColor: "#FFECDE",
                 color: "#462A10",
 
@@ -195,9 +194,9 @@ export default function Navbar() {
 
                 textTransform: "none",
                 fontFamily: '"Press Start 2P", monospace',
-                fontWeight: 400,
                 fontSize: "0.65rem",
-                borderRadius: "0px",
+
+                borderRadius: 0,
               }}
             >
               Build Now
