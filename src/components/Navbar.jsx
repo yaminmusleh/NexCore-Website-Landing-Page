@@ -59,6 +59,7 @@ export default function Navbar() {
       sx={{
         backgroundColor: "#1C0D24",
         boxShadow: "none",
+        borderBottom: "3px solid #FFECDE"
       }}
     >
       <Container maxWidth="xl">
