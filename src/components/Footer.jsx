@@ -7,9 +7,9 @@ import Link from "@mui/material/Link";
 import { NavLink } from "react-router-dom";
 
 const socials = [
-  { name: "Github", url: "https://github.com/" },
-  { name: "Discord", url: "https://discord.com/" },
-  { name: "Twitter", url: "https://twitter.com/" },
+  { name: "Github", url: "https://github.com/yaminmusleh/" },
+  { name: "Instagram", url: "https://www.instagram.com/yamin._mu/" },
+  { name: "Youtube", url: "https://www.youtube.com/@my.miserable_coding.life1" },
 ];
 
 export default function Footer() {

@@ -14,7 +14,6 @@ import { NavLink } from "react-router-dom";
 const pages = [
   { name: "Get Started", path: "/" },
   { name: "About", path: "/About" },
-  { name: "Github", path: "/Github" },
 ];
 
 export default function Navbar() {
