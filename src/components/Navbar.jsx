@@ -54,6 +54,7 @@ export default function Navbar() {
   };
 
   return (
+    
     <AppBar
       position="fixed"
       sx={{
@@ -206,5 +207,6 @@ export default function Navbar() {
         </Toolbar>
       </Container>
     </AppBar>
+    
   );
 }

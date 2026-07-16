@@ -112,16 +112,17 @@ export default function HeroSection() {
             mt: 6,
           }}
         >
-          <Stack
-            direction="row"
-            spacing={2}
-            justifyContent="center"
-            alignItems="center"
-            sx={{
-              flexWrap: "wrap",
-              rowGap: 2,
-            }}
-          >
+          <Box
+  sx={{
+    display: "flex",
+    flexDirection: "row",
+    gap: 2,
+    justifyContent: "center",
+    alignItems: "center",
+    flexWrap: "wrap",
+    rowGap: 2,
+  }}
+>
             
             {heroButtons.map((btn) => (
               <Button
@@ -162,7 +163,7 @@ export default function HeroSection() {
                 {btn.name}
               </Button>
             ))}
-          </Stack>
+          </Box>
         </Box>
 
         {/* ================= TERMINAL ================= */}
