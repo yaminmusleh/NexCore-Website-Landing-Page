@@ -9,7 +9,7 @@ import { NavLink } from "react-router-dom";
 const heroButtons = [
   { name: "Get Started", path: "/", variant: "filled" },
   { name: "Documentation", path: "/Documentation", variant: "outlined" },
-  { name: "GitHub", path: "/Github", variant: "outlined" },
+  
 ];
 
 const pixelFont = {

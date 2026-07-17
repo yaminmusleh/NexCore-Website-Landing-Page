@@ -10,6 +10,7 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import Typography from "@mui/material/Typography";
 import { NavLink } from "react-router-dom";
+import logo from "../assets/imgs/Adobe Express - file.png";
 
 const pages = [
   { name: "Get Started", path: "/" },
@@ -53,13 +54,12 @@ export default function Navbar() {
   };
 
   return (
-    
     <AppBar
       position="fixed"
       sx={{
         backgroundColor: "#1C0D24",
         boxShadow: "none",
-        borderBottom: "3px solid #FFECDE"
+        borderBottom: "3px solid #FFECDE",
       }}
     >
       <Container maxWidth="xl">
@@ -70,7 +70,7 @@ export default function Navbar() {
             justifyContent: "center",
           }}
         >
-           {/* ================= MOBILE MENU ================= */}
+          {/* ================= MOBILE MENU ================= */}
           <Box
             sx={{
               display: { xs: "flex", md: "none" },
@@ -112,30 +112,50 @@ export default function Navbar() {
               ))}
             </Menu>
           </Box>
-          {/* ================= LOGO ================= */}
 
-          <Typography
+          {/* ================= LOGO ================= */}
+          <Box
             component={NavLink}
             to="/"
             sx={{
+              display: "flex",
+              alignItems: "center",
               ml: 4,
               mr: 2,
-              color: "#FFECDE",
               textDecoration: "none",
-              fontFamily: '"Press Start 2P", monospace',
-              fontWeight: 400,
-              letterSpacing: ".3rem",
-              fontSize: {
-                xs: "0.65rem",
-                sm: "0.9rem",
-                md: "1rem",
-              },
+              gap: "5px", // space between image and text
             }}
           >
-            NEXCORE
-          </Typography>
+            <Box
+              component="img"
+              src={logo}
+              alt="NexCore logo"
+              sx={{
+                width: { xs: 50, sm: 70, md: 80 },
+                height: { xs: 50, sm: 70, md: 80 },
+                objectFit: "contain",
+              }}
+            />
 
-         
+            <Typography
+              sx={{
+                color: "#FFECDE",
+                fontFamily: '"Press Start 2P", monospace',
+                fontWeight: 400,
+                letterSpacing: ".1rem",
+                fontSize: {
+                  xs: "0.65rem",
+                  sm: "0.9rem",
+                  md: "1rem",
+                },
+                ml: "-25px", // move text over the transparent image area
+                position: "relative",
+                zIndex: 1,
+              }}
+            >
+              NEXCORE
+            </Typography>
+          </Box>
 
           {/* ================= DESKTOP NAV LINKS ================= */}
           <Box
@@ -206,6 +226,5 @@ export default function Navbar() {
         </Toolbar>
       </Container>
     </AppBar>
-    
   );
 }
