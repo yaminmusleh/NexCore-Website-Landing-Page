@@ -8,7 +8,8 @@ export default function LandingPage() {
     <>
     <HeroSection/>
     <Features/>
-    <PixelCharacterFooterDecoration/>
+    <PixelCharacterFooterDecoration speed={10} direction="ltr" />
+    
     </>
   )
 }
