@@ -3,7 +3,6 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
 
-// ================= TECH STACK (presented as inline tags, not a checklist) ================= //
 const techStack = [
   "React.js",
   "C++",
@@ -81,7 +80,7 @@ export default function AboutMe() {
               mb: 2,
             }}
           >
-            I'm a Full Stack Developer and YouTube content creator, currently
+            I'm a Full Stack Developer and YouTube content creator - still working on myself, currently
             studying Computer Engineering.
           </Typography>
 

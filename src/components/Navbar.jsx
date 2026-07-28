@@ -15,6 +15,7 @@ import logo from "../assets/imgs/Adobe Express - file.png";
 const pages = [
   { name: "Get Started", path: "/" },
   { name: "About", path: "/About" },
+  { name: "Creation", path: "/Creation" },
 ];
 
 export default function Navbar() {
