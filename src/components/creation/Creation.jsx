@@ -5,19 +5,75 @@ import Button from "@mui/material/Button";
 
 export default function Creation() {
   const typography = [
-    {
-      text: "A programming language is built from several core components that work together to transform source code into something a computer can understand.",
-    },
-    {
-      text: "The first component is the lexer, which takes the source code and breaks it down into a series of tokens. These tokens are then passed to the parser, which analyzes the structure of the code and creates an abstract syntax tree (AST).",
-    },
-    {
-      text: "The AST is then passed to the semantic analyzer, which checks for errors and ensures that the code is semantically correct. Once the code has been validated, it is passed to the code generator, which produces machine code that can be executed by the computer.",
-    },
-    {
-      text: "Finally, the machine code is executed by the computer's processor, which carries out the instructions specified in the source code.",
-    },
-  ];
+  {
+    text: (
+      <>
+        A programming language is much more than its syntax. Behind every line
+        of code is a <strong>compilation pipeline</strong> made up of several
+        components that transform human-readable source code into instructions a
+        computer can execute. Each stage has a specific responsibility, and
+        together they ensure that the program is valid, meaningful, and ready
+        to run. Although different languages implement these stages
+        differently, the overall workflow is remarkably similar across most
+        modern <strong>compilers</strong>.
+      </>
+    ),
+  },
+  {
+    text: (
+      <>
+        The first stage is the <strong>lexer</strong> (or{" "}
+        <strong>lexical analyzer</strong>). The lexer reads the source code one
+        character at a time and groups those characters into meaningful units
+        called <strong>tokens</strong>. For example,{" "}
+        <strong>keywords</strong> such as 'if' or 'while',{" "}
+        <strong>identifiers</strong>, numbers, operators, and punctuation are
+        all converted into tokens. During this process, whitespace and comments
+        are typically ignored since they usually don't affect program
+        execution. By transforming raw text into a structured sequence of
+        tokens, the lexer makes the input much easier for the next stage of the
+        compiler to understand.
+      </>
+    ),
+  },
+  {
+    text: (
+      <>
+        Once tokenization is complete, the <strong>parser</strong> takes over.
+        Its responsibility is to verify that the tokens follow the{" "}
+        <strong>grammar rules</strong> of the language. If the syntax is valid,
+        the parser builds an <strong>Abstract Syntax Tree (AST)</strong>, which
+        represents the logical structure of the program rather than its textual
+        form. After the AST is created, <strong>semantic analysis</strong>{" "}
+        begins. This stage checks rules that grammar alone cannot enforce, such
+        as whether variables have been declared before use, whether{" "}
+        <strong>data types</strong> are compatible, whether functions are
+        called with the correct number of arguments, and whether identifiers
+        are used within their proper <strong>scope</strong>. If any of these
+        checks fail, meaningful error messages are produced to help the
+        programmer locate the problem.
+      </>
+    ),
+  },
+  {
+    text: (
+      <>
+        The final stage is <strong>code generation</strong>. After the program
+        has successfully passed <strong>lexical</strong>,{" "}
+        <strong>syntactic</strong>, and <strong>semantic analysis</strong>, the
+        compiler traverses the AST and translates it into a lower-level
+        representation. Depending on the language, this may be{" "}
+        <strong>machine code</strong>, <strong>assembly</strong>,{" "}
+        <strong>bytecode</strong>, or another intermediate language. This
+        generated output can then be executed directly by the processor or by a{" "}
+        <strong>virtual machine</strong>. The quality of the{" "}
+        <strong>code generator</strong> has a significant impact on the
+        performance of the final program, making it one of the most important
+        components of any compiler.
+      </>
+    ),
+  },
+];
   return (
     <Box
       sx={{
@@ -81,6 +137,10 @@ export default function Creation() {
                   fontSize: "0.85rem",
                   lineHeight: 1.9,
                   mb: 2.5,
+                  "& strong": {
+                    color: "#F8CAA5",
+                    fontSize: "0.99rem",
+                  },
                 }}
               >
                 {item.text}
@@ -152,39 +212,37 @@ export default function Creation() {
               click the button below to read my development notes and follow the
               language's evolution from source code to execution.
             </Typography>
-              {/* ================= BUTTON ================= */}
-           <Box
-            sx={{
-              display: { xs: "none", md: "flex" },
-              pr: "3rem",
-            }}
-          >
-            <Button
-              variant="contained"
+            {/* ================= BUTTON ================= */}
+            <Box
               sx={{
-                border: "4px solid #F8CAA5",
-                py: "3px",
-
-                backgroundColor: "#FFECDE",
-                color: "#462A10",
-
-                "&:hover": {
-                  backgroundColor: "#F8CAA5",
-                },
-
-                textTransform: "none",
-                fontFamily: '"Press Start 2P", monospace',
-                fontSize: "0.65rem",
-
-                borderRadius: 0,
+                display: { xs: "none", md: "flex" },
+                pr: "3rem",
               }}
             >
-              Read Development Notes
-            </Button>
-          </Box>
-          </Box>
+              <Button
+                variant="contained"
+                sx={{
+                  border: "4px solid #F8CAA5",
+                  py: "3px",
 
-        
+                  backgroundColor: "#FFECDE",
+                  color: "#462A10",
+
+                  "&:hover": {
+                    backgroundColor: "#F8CAA5",
+                  },
+
+                  textTransform: "none",
+                  fontFamily: '"Press Start 2P", monospace',
+                  fontSize: "0.65rem",
+
+                  borderRadius: 0,
+                }}
+              >
+                Read Development Notes
+              </Button>
+            </Box>
+          </Box>
         </Box>
       </Box>
     </Box>
