@@ -14,7 +14,7 @@ const techStack = ["C++ 20", "CMake", "Git", "GitHub", "VS Code","C lion", "Linu
 const initialGoals = [
   { id: "parser", label: "Implement a complete hand-written recursive descent parser.", done: true },
   { id: "errors", label: "Support robust error reporting and recovery.", done: true },
-  { id: "asm", label: "Generate optimized x86-64 assembly.", done: false },
+  { id: "asm", label: "Generate optimized x86-64 assembly.", done: true },
   { id: "llvm", label: "Integrate with LLVM as a custom backend.", done: false },
 ];
 

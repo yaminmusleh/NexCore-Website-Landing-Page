@@ -57,7 +57,7 @@ export default function HeroSection() {
             lineHeight: 1.5,
           }}
         >
-          NexCore-Project
+         NexCore Project
         </Typography>
 
         {/* ================= QUOTE ================= */}
@@ -97,8 +97,7 @@ export default function HeroSection() {
                 lineHeight: 1.8,
               }}
             >
-              "A modern compiler built with retro precision. Engineered for
-              performance, designed for nostalgia."
+              "Designed with one goal: making every keystroke a questionable life decision."
             </Typography>
           </Box>
         </Box>

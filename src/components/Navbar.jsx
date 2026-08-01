@@ -125,7 +125,7 @@ export default function Navbar() {
               ml: 4,
               mr: 2,
               textDecoration: "none",
-              gap: "5px", // space between image and text
+              gap: { xs: 2, sm: "4px", md: "5px" }, // space between image and text
             }}
           >
             <Box

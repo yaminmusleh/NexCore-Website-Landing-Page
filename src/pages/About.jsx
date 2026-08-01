@@ -8,9 +8,8 @@ import Arsenal from '../components/about/Arsenal'
 export default function About() {
   return (
     <>
-    
-    <StorySection/>
     <AboutMe/>
+    <StorySection/>
     <Arsenal/>
     
     </>
