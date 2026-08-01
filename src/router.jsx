@@ -1,15 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "./Layout/MainLayout.jsx";
 import LandingPage from "./pages/LandingPage.jsx";
-
 import About from "./pages/About.jsx";
 import Creation from "./components/creation/Creation.jsx";
-
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <MainLayout/>,
+    element: <MainLayout />,
     children: [
       {
         index: true,
@@ -19,10 +17,10 @@ const router = createBrowserRouter([
         path: "About",
         element: <About />,
       },
-       {
+      {
         path: "Creation",
         element: <Creation />,
-      }
+      },
     ],
   },
 ]);

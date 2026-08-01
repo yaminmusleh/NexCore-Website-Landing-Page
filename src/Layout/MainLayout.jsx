@@ -10,7 +10,7 @@ export default function MainLayout() {
     <>
       <Navbar />
 
-      <Toolbar />
+      <Toolbar sx={{ minHeight: { xs: 64, md: 84 } }} />
 
       <Outlet />
 
