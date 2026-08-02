@@ -3,6 +3,7 @@ import MainLayout from "./Layout/MainLayout.jsx";
 import LandingPage from "./pages/LandingPage.jsx";
 import About from "./pages/About.jsx";
 import Creation from "./components/creation/Creation.jsx";
+import Documentation from "./pages/Documentation.jsx";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: "Creation",
         element: <Creation />,
+      },
+      {
+        path: "Documentation",
+        element: <Documentation />,
       },
     ],
   },
