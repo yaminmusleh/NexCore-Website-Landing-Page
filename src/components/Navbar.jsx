@@ -14,6 +14,7 @@ import logo from "../assets/imgs/Adobe Express - file.png";
 
 const pages = [
   { name: "Get Started", path: "/" },
+  { name: "Docs", path: "/Documentation" },
   { name: "About", path: "/About" },
   { name: "Creation", path: "/Creation" },
 ];

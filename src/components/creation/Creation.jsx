@@ -215,13 +215,17 @@ export default function Creation() {
             {/* ================= BUTTON ================= */}
             <Box
               sx={{
-                display: { xs: "none", md: "flex" },
-                pr: "3rem",
+                display:"flex" ,
+                justifyContent: {md:"flex-start", xs:"center"},
+                textAlign: {md:"left", xs:"center"},
+               
               }}
             >
               <Button
                 variant="contained"
                 sx={{
+                  width: {sm:"60%",md:"30%", xs: "90%"},
+                  fontSize: {sm:"0.65rem", xs:"0.40rem"},
                   border: "4px solid #F8CAA5",
                   py: "3px",
 
