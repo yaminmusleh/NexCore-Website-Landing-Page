@@ -4,6 +4,7 @@ import LandingPage from "./pages/LandingPage.jsx";
 import About from "./pages/About.jsx";
 import Creation from "./components/creation/Creation.jsx";
 import Documentation from "./pages/Documentation.jsx";
+import Home from "./pages/Home.jsx";
 
 const router = createBrowserRouter([
   {
@@ -12,7 +13,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <LandingPage />,
+        element: <Home/>,
       },
       {
         path: "About",
